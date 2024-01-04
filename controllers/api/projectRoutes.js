@@ -12,8 +12,6 @@ router.get('/', withAuth, async (req, res) => {
 
     res.render('homepage', {
       users,
-      // TODO: Add a comment describing the functionality of this property
-      //gives acces to homepage if loggedin
       logged_in: req.session.logged_in,
     });
   } catch (err) {
