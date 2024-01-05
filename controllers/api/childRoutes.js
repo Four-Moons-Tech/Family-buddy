@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Project } = require('../../models');
+const { Child } = require('../../models');
 
 router.get('/', withAuth, async (req, res) => {
   try {
@@ -22,12 +22,12 @@ router.get('/', withAuth, async (req, res) => {
 
 router.post('/', async (req, res) => {
   try {
-    const newProject = await Project.create({
+    const newChild = await Child.create({
       ...req.body,
       user_id: req.session.user_id,
     });
 
-    res.status(200).json(newProject);
+    res.status(200).json(newChild);
   } catch (err) {
     res.status(400).json(err);
   }
@@ -35,19 +35,19 @@ router.post('/', async (req, res) => {
 
 router.delete('/:id', async (req, res) => {
   try {
-    const projectData = await Project.destroy({
+    const childData = await Child.destroy({
       where: {
         id: req.params.id,
         user_id: req.session.user_id,
       },
     });
 
-    if (!projectData) {
-      res.status(404).json({ message: 'No project found with this id!' });
+    if (!childData) {
+      res.status(404).json({ message: 'No child found with this id!' });
       return;
     }
 
-    res.status(200).json(projectData);
+    res.status(200).json(childData);
   } catch (err) {
     res.status(500).json(err);
   }
