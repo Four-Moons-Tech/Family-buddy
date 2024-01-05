@@ -1,6 +1,6 @@
 const router = require('express').Router();
-const { User } = require('../../models');
-const withAuth = require('../../utils/auth');
+const { User } = require('../models');
+const withAuth = require('../utils/auth');
 
 router.get('/', withAuth, async (req, res) => {
   try {
@@ -9,7 +9,7 @@ router.get('/', withAuth, async (req, res) => {
       order: [['name', 'ASC']],
     });
 
-    const users = userData.map((project) => project.get({ plain: true }));
+    const users = userData.map((user) => user.get({ plain: true }));
 
     res.render('homepage', {
       users,
