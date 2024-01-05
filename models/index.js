@@ -1,7 +1,7 @@
-const User = require('./User');
+const User = require('./user');
 const Child = require('./child');
 const Chores = require('./chores');
-const Earnings = require('./Earnings');
+const Earnings = require('./earnings');
 
 User.hasMany(Child, {
   foreignKey: 'user_id',
@@ -11,13 +11,14 @@ User.hasMany(Child, {
 Child.belongsTo(User, {
   foreignKey: 'user_id'
 });
+
 Child.hasMany(Chores, {
-  foreignKey: "child_id",
+  foreignKey: 'child_id',
   onDelete: 'CASCADE'
 });
 
 Chores.belongsTo(Child, {
-  foreignKey: 'chores_id',
+  foreignKey: 'child_id',
   onDelete: 'CASCADE'
 });
 
@@ -27,25 +28,21 @@ Earnings.hasMany(Chores, {
 })
 
 Chores.belongsTo(Earnings, { 
-    foreignKey: "chores_id"
+    foreignKey: 'earnings_id',
  })
 
  Child.hasMany(Earnings,{
-  foreignKey: "Child_id",
+  foreignKey: 'child_id',
   onDelete: 'CASCADE'
  } )
 
 
 
 Earnings.belongsTo(Child, {
-  foreignKey: 'Earnings_id',
+  foreignKey: 'child_id',
   onDelete: 'CASCADE'
 
 }
 )
-
-
-
-
 
 module.exports = { User, Child, Chores, Earnings };

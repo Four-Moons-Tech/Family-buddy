@@ -18,13 +18,20 @@ Chores.init(
     description: {
       type: DataTypes.STRING,
     },
-   Child: {
+   child_id: {
     type: DataTypes.STRING,
     references: {
         model:'child',
         key:'id',
     }
+   },
+
+   rate: {
+    type: DataTypes.STRING,
+    
    }
+  //  SELECT rate,  SUM (rate) AS total_earnings
+  //  FROM myapp_chores GROUP BY rate
    
     
   },
