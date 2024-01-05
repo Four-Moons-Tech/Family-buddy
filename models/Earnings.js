@@ -11,20 +11,16 @@ Earnings.init(
       primaryKey: true,
       autoIncrement: true,
     },
-   
-    
-   
-   
-    
+  
   },
   {
     sequelize,
-    timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'chores',
+    modelName: 'earning',
   }
 );
+
 
 module.exports = Earnings;
 

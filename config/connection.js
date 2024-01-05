@@ -1,9 +1,12 @@
 const Sequelize = require('sequelize');
-require('dotenv').config();
+//require('dotenv').config();
 
 const sequelize = new Sequelize(
-  process.env.chores_db,
-  process.env.root,
+  'chores_db',
+  'root',
+  '',
+  // process.env.chores_db,
+  // process.env.root,
   //process.env.DB_PASSWORD,
   {
     host: 'localhost',

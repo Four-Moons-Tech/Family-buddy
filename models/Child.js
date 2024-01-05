@@ -18,7 +18,13 @@ Child.init(
     description: {
       type: DataTypes.STRING,
     },
-   
+    user_id: {
+      type: DataTypes.STRING,
+      references: {
+        model:'user',
+        key:'id',
+    }
+    }
    
     
   },
