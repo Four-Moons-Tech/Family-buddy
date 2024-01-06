@@ -19,21 +19,15 @@ Chores.init(
       type: DataTypes.STRING,
     },
    child_id: {
-    type: DataTypes.STRING,
+    type: DataTypes.INTEGER,
     references: {
         model:'child',
         key:'id',
     }
    },
-
-   rate: {
-    type: DataTypes.STRING,
-    
-   }
-  //  SELECT rate,  SUM (rate) AS total_earnings
-  //  FROM myapp_chores GROUP BY rate
-   
-    
+    rate: {
+     type: DataTypes.DECIMAL(10,2),
+   } 
   },
   {
     sequelize,
