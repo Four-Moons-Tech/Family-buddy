@@ -1,0 +1,51 @@
+{{!-- {{#if loggedIn}} --}}
+<section class="container">
+    <h3 class="family-name">{{user.last_name}}</h3>
+
+    <section class="flex-row justify-center">
+        <button id="Add a Child"></button>
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#Modal" data-bs-whatever="@mdo">Add a Child</button>
+        <div class="modal fade" id="Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Add a child</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="mb-3">
+                                <label for="child-name" class="col-form-label">Name</label>
+                                <input type="text" class="form-control" id="child-name">
+                            </div>
+                            <div class="mb-3">
+                                <label for="child-age" class="col-form-label">Age</label>
+                                <input type="text" class="form-control" id="child-age">
+                            </div>
+                            <div class="mb-3">
+                                <label for="child-goal" class="col-form-label">Child's Goal</label>
+                                <input type="number" class="form-control" id="child-goal">
+                            </div>
+                            <div class="mb-3">
+                                <label for="message-text" class="col-form-label">What is the child saving for?</label>
+                                <textarea class="form-control" id="message-text"></textarea>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{#each user.child as |child|}}
+        {{!-- {{> child-details}} --}}
+        
+        {{/each}}
+    </section>
+</section>
+{{!-- {{else }} --}}
+
+<a href="./login">Login first</a>
+{{!-- {{/if}} --}}
