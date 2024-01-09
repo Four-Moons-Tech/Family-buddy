@@ -35,8 +35,10 @@ const signupFormHandler = async (event) => {
     });
 
     if (response.ok) {
-      document.location.replace('/profile');
+      document.location.replace('/addchild');
+      console.log('success!')
     } else {
+      console.log('error');
       alert(response.statusText);
     }
   }
