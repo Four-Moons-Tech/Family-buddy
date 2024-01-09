@@ -4,7 +4,7 @@ const Sequelize = require('sequelize');
 const sequelize = new Sequelize(
   'chores_db',
   'root',
-  '',
+  'root',
   // process.env.chores_db,
   // process.env.root,
   //process.env.DB_PASSWORD,
@@ -16,5 +16,4 @@ const sequelize = new Sequelize(
 );
 
 module.exports = sequelize;
-
 
