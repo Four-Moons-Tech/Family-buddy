@@ -2,17 +2,17 @@ const router = require('express').Router();
 const { User, Child, Chores } = require('../models');
 const withAuth = require('../utils/auth');
 
-router.get('/', withAuth, async (req, res) => {
+router.get('/', async (req, res) => {
   try {
-    const userData = await User.findAll({
-      attributes: { exclude: ['password'] },
-      order: [['name', 'ASC']],
-    });
+    // const userData = await User.findAll({
+    //   attributes: { exclude: ['password'] },
+    //   order: [['name', 'ASC']],
+    // });
 
-    const users = userData.map((user) => user.get({ plain: true }));
+    // const users = userData.map((user) => user.get({ plain: true }));
 
     res.render('homepage', {
-      users,
+      
  
       logged_in: req.session.logged_in,
     });
@@ -21,23 +21,23 @@ router.get('/', withAuth, async (req, res) => {
   }
 });
 
-router.get('/add_child',async(req, res) => {
+router.get('/addchild',async(req, res) => {
  try {
    const userData= await User.findByPk(req.session.user_id, {
     attributes: { exclude: ['password'] }, 
     include: [{model: Child, 
     include: [{model: Chores,
-      attributes: {
-        include: [
-          [
-            // Use plain SQL to add up the total mileage
-            sequelize.literal(
-              '(SELECT SUM(rate) FROM chores WHERE status = complete)'
-            ),
-            'totalEarnings',
-          ],
-        ],
-      },
+      // attributes: {
+      //   include: [
+      //     [
+      //       // Use plain SQL to add up the total mileage
+      //       sequelize.literal(
+      //         '(SELECT SUM(rate) FROM chores WHERE status = complete)'
+      //       ),
+      //       'totalEarnings',
+      //     ],
+      //   ],
+      // },
     }]
     }]
     

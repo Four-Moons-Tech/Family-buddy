@@ -18,11 +18,14 @@
     </h1>
    
     <!--if user is loggedin -->
-    {{#if logged_in}}
+    {{!-- {{#if logged_in}}
     <nav>
       <button class="btn" id="logout">logout</button>
     </nav>
-    {{/if}}
+    {{/if}} --}}
+    <nav>
+      <a href = "/login" ><button class="btn" id="login">login</button></a>
+    </nav>
   </header>
   <main class="container container-fluid mt-5">
     {{{ body }}}
@@ -33,9 +36,9 @@
 
   
   <!--if user is loggedin -->
-  {{#if logged_in}}
-  <script src="../../public/js/logout.js"></script>
-  {{/if}}
+  {{!-- {{#if logged_in}}
+  <script src="./js/logout"></script>
+  {{/if}} --}}
 </body>
 
 </html>
