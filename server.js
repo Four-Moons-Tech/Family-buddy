@@ -1,8 +1,8 @@
 const path = require('path');
 const express = require('express');
-//console.log('express', express)
+
 const session = require('express-session');
-// console.log('session',session)
+
 //const routes = require('./controllers');
 //console.log('routes',routes)
 const exphbs = require('express-handlebars');
@@ -10,10 +10,13 @@ const exphbs = require('express-handlebars');
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-
+// temporary
+const User = require('./models/User.js')
+const Chores = require('./models/Chores.js')
+//
 
 const sequelize = require('./config/connection');
-//console.log('sequelize',sequelize)
+
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 
@@ -39,12 +42,11 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')))
 app.use(require('./controllers'));
 sequelize.sync({ force: false }).then(() => {
+  
+  // User.findAll({}).then(x => console.log(x))
+  // Chores.findAll({}).then(x => console.log(x))
+  //
   app.listen(PORT, () => console.log('Server listening on: http://localhost:' + PORT));
 });
-// const express= require('express');
-// const PORT = process.env.PORT || 3001;
 
-// const app=express();
-
-// app.listen(PORT, () => console.log('Now listening'));
 
