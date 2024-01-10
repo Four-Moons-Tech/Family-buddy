@@ -14,7 +14,7 @@ const loginFormHandler = async (event) => {
     console.log(response)
 
     if (response.ok) {
-      document.location.replace('/addchild');
+      document.location.replace('/add_child');
     } else {
       alert('Failed to log in');
     }

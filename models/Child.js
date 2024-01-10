@@ -15,6 +15,10 @@ Child.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
+    age: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
     description: {
       type: DataTypes.STRING,
     },
