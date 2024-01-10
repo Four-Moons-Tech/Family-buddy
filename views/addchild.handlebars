@@ -1,5 +1,5 @@
 <section class="container">
-    <h3 class="family-name">Welcome,{{user.last_name}}</h3>
+    <h3 class="family-name">Welcome,{{user.last_name}} Family</h3>
 
     <section class="flex-row justify-center">
         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal" id="open-modal"
@@ -38,10 +38,19 @@
                 </div>
             </div>
         </div>
-        {{#each user.children as |child|}}
 
-
+        {{#each user.child as |child|}}
+            <div class="book card p-5 m-5">
+                <h2 class="title is-size-1 is-size-3-mobile">{{child.name}}</h2>
+                <h3 class="title is-size-1 is-size-3-mobile">{{child.goal}}</h3>
+                {{!-- <h3>{{totalEarnings}}</h3> --}}
+            </div>
         {{/each}}
     </section>
 </section>
-<script src="./js/addchild.js"></script>
+{{else }}
+
+<a href="./login.handlebars">Login first</a>
+
+<script src="/js/profile.js"></script>
+{{/if}}

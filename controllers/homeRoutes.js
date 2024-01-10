@@ -1,13 +1,16 @@
 const router = require('express').Router();
 const { User, Child, Chores } = require('../models');
 const withAuth = require('../utils/auth');
+const sequelize = require('sequelize')
 
 router.get('/', async (req, res) => {
   try {
-    // const userData = await User.findAll({
-    //   attributes: { exclude: ['password'] },
-    //   order: [['name', 'ASC']],
-    // });
+
+    const userData = await User.findAll({
+      attributes: { exclude: ['password'] },
+      order: [['last_name', 'ASC']],
+    });
+
 
     // const users = userData.map((user) => user.get({ plain: true }));
 
@@ -30,9 +33,11 @@ router.get('/addchild',async(req, res) => {
       // attributes: {
       //   include: [
       //     [
-      //       // Use plain SQL to add up the total mileage
+
+      //       // Use plain SQL to add up the total earnings
       //       sequelize.literal(
-      //         '(SELECT SUM(rate) FROM chores WHERE status = complete)'
+      //         '(SELECT SUM(rate) FROM chores WHERE status_complete = true)'
+
       //       ),
       //       'totalEarnings',
       //     ],
