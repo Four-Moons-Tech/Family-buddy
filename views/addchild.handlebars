@@ -1,17 +1,15 @@
-{{#if loggedIn}}
-
 <section class="container">
     <h3 class="family-name">Welcome,{{user.last_name}} Family</h3>
 
     <section class="flex-row justify-center">
-        <button id="Add a Child"></button>
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#Modal" data-bs-whatever="@mdo">Add a Child</button>
-        <div class="modal fade" id="Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal" id="open-modal"
+            data-bs-whatever="@mdo">Add a Child</button>
+        <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
                         <h1 class="modal-title fs-5" id="exampleModalLabel">Add a child</h1>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">x</button>
                     </div>
                     <div class="modal-body">
                         <form>
@@ -40,6 +38,7 @@
                 </div>
             </div>
         </div>
+
         {{#each user.child as |child|}}
             <div class="book card p-5 m-5">
                 <h2 class="title is-size-1 is-size-3-mobile">{{child.name}}</h2>

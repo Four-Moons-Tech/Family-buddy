@@ -41,3 +41,4 @@ Chores.init(
 );
 
 module.exports = Chores;
+
