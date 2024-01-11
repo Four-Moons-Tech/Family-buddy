@@ -60,3 +60,17 @@ document
 
   document.querySelector('.signup-form').addEventListener('submit', signupFormHandler);
 
+  // const login = async () => {
+  //   const response = await fetch('/login', {
+  //     method: 'POST',
+  //     headers: { 'Content-Type': 'application/json' },
+  //   });
+  
+  //   if (response.ok) {
+  //     document.location.replace('/login');
+  //   } else {
+  //     alert(response.statusText);
+  //   }
+  // };
+  
+  // document.querySelector('#login').addEventListener('click', login);
