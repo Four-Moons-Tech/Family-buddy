@@ -5,7 +5,7 @@ const withAuth = require('../../utils/auth')
 router.post('/chore', async (req, res) => {
   
     try {
-      const {id, name, status, child_id, rate  } = req.body
+      console.log({...req.body})
       const newChore = await Chores.create({
         ...req.body,
         user_id: req.session.user_id,
@@ -13,6 +13,7 @@ router.post('/chore', async (req, res) => {
   
       res.status(200).json(newChore);
     } catch (err) {
+      console.log(err)
       res.status(400).json(err);
       
     }
