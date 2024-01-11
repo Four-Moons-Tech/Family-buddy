@@ -1,15 +1,13 @@
 const router = require('express').Router();
 const { Chores } = require('../../models');
-const withAuth = require('../../utils/auth')
+// const withAuth = require('../../utils/auth')
 
-router.post('/child/:id/chore', async (req, res) => {
-     console.log('test', req)
-    try {
-      console.log({...req.body})
-      const newChore = await Chores.create({
-        ...req.body,
-        user_id: req.session.user_id,
-      });
+router.post('/', async (req, res) => {
+  
+  try {
+    // console.log({...req.body})
+    // fixed where the user_id was being used when it should've been the child id. we got the child id from the data-childid on the button.
+      const newChore = await Chores.create(req.body);
   
       res.status(200).json(newChore);
     } catch (err) {
@@ -20,26 +18,29 @@ router.post('/child/:id/chore', async (req, res) => {
   });
 
 
-  // router.update('/:id', async (req, res) => {
-  //   try {
-  //     const choreData = await Chore.update({
-  //       where: {
-  //         id: req.params.id,
-  //         user_id: req.session.user_id,
-  //         status: false,
-  //       },
-  //     });
+  router.put('/:id', async (req, res) => {
+    try {
+      const choreData = await Chores.update({
+        status: req.body.status
+      },{
+        where: {
+          id: req.params.id,
+          child_id: req.body.child_id
+        },
+      }); 
+      
   
-  //     if (!choreData) {
-  //       res.status(404).json({ message: '???' });
-  //       return;
-  //     }
+      if (!choreData) {
+        res.status(404).json({ message: '???' });
+        return;
+      }
   
-  //     res.status(200).json(choreData);
-  //   } catch (err) {
-  //     res.status(500).json(err);
-  //   }
-  // });
+      res.status(200).json(choreData);
+    } catch (err) {
+      console.log(err)
+      res.status(500).json(err);
+    }
+  });
   
 
   module.exports = router;

@@ -13,7 +13,13 @@ const sequelize = require('./config/connection');
 
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
-
+// tests
+async function list(pathToModel) {
+  const model = require(`./models/${pathToModel}`)
+  const items = await model.findAll({})
+  console.log(items.map(i => i.dataValues))
+}
+//
 
 const sess = {
   secret: 'Super secret secret',
@@ -36,6 +42,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')))
 app.use(require('./controllers'));
 sequelize.sync({ force: false }).then(() => {
+  // list('Chores.js')
   app.listen(PORT, () => console.log('Server listening on: http://localhost:' + PORT));
 });
 

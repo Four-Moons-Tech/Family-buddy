@@ -23,10 +23,11 @@
     <nav>
       <button class="btn" id="logout">Logout</button>
     </nav>
-    {{/if}}
+    {{else}}
     <nav>
       <a href = "/login" ><button class="btn" id="login">Login</button></a>
     </nav>
+    {{/if}}
   </header>
   <main class="container container-fluid mt-5">
     {{{ body }}}

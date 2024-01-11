@@ -51,7 +51,14 @@
                 <h3>Eanings: ${{totalEarnings}}</h3>
                 {{#each child.chores as |chore|}}
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <input 
+                        class="form-check-input" 
+                        type="checkbox" 
+                        data-childid="{{child.id}}"
+                        id="flexCheckDefault" 
+                        checked=""
+                        onchange="updateChore(this, {{chore.id}})"
+                    >
                     <label class="form-check-label" for="flexCheckDefault">
                         {{chore.name}} {{chore.rate}}
                     </label>
@@ -74,18 +81,25 @@
                                 <form>
                                     <div class="mb-3">
                                         <label for="chore-description" class="col-form-label">Chore Description</label>
-                                        <input type="text" class="form-control" id="chore-description">
+                                        <input type="text" class="form-control" id="chore-description"
+                                        name="name"
+                                        >
                                     </div>
                                     <div class="mb-3">
                                         <label for="pay-rate" class="col-form-label">Pay Rate</label>
-                                        <input type="text" class="form-control" id="pay-rate">
+                                        <input type="text" class="form-control" id="pay-rate"
+                                        name="rate">
                                     </div>
                                 </form>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                {{!-- Added onclick attribute. Onclick attributes can use the "this" keyword to refer to the element they are contained in. --}}
                                 <button type="button" class="btn btn-primary child-modal" id="child-modal-id"
-                                    data-childid="{{child.id}}">Save</button>
+                                    data-childid="{{child.id}}"
+                                    onclick="handleModal(this)">
+                                    Save
+                                </button>
                             </div>
                         </div>
                     </div>
