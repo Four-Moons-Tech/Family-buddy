@@ -41,10 +41,10 @@ You can see our GitHub accounts here:
 
 >You can contact us via email with any questions:
 >Anna:  anna@fourmoonstech.com
->Jarett: 
->Chukwuka: 
+>Jarett: jarettdesanti@gmail.com
+>Chukwuka: chukwukaizamojee@gmail.com
 
 
 >[Link to Video Walk Through]()
 
-> ![Applicatio Screenshot](<>)  
+> ![Application Screenshot](<>)  

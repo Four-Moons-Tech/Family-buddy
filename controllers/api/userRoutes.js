@@ -4,9 +4,10 @@ const { User } = require('../../models');
 // CREATE new user
 router.post('/', async (req, res) => {
   try {
+   console.log('user being created', {...req.body});
     const userData = await User.create({
-      first_name: req.body.firstname,
-      last_name: req.body.lastname,
+      first_name: req.body.first_name,
+      last_name: req.body.last_name,
       email: req.body.email,
       password: req.body.password,
     });
@@ -18,6 +19,7 @@ router.post('/', async (req, res) => {
       res.status(200).json(userData);
     });
   } catch (err) {
+    console.log(err)
     res.status(400).json(err);
   }
 });

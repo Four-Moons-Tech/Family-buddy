@@ -15,8 +15,16 @@ Child.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
+    age: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
     description: {
       type: DataTypes.STRING,
+    },
+    goal: {
+      type: DataTypes.DECIMAL,
+      allowNull: false,
     },
     user_id: {
       type: DataTypes.INTEGER,
