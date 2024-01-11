@@ -15,10 +15,10 @@ Chores.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    // status: {
-    //   type: DataTypes.BOOLEAN,
-    //   defaultValue:false,
-    // },
+    status: {
+      type: DataTypes.BOOLEAN,
+      defaultValue:false,
+    },
     
    child_id: {
     type: DataTypes.INTEGER,

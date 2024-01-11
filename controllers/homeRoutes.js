@@ -1,21 +1,20 @@
 const router = require('express').Router();
+const { response } = require('express');
 const { User, Child, Chores } = require('../models');
 const withAuth = require('../utils/auth');
 const sequelize = require('sequelize')
 
-router.get('/', async (req, res) => {
+router.get('/', withAuth, async (req, res) => {
   try {
-
     const userData = await User.findAll({
       attributes: { exclude: ['password'] },
       order: [['last_name', 'ASC']],
     });
 
-
-    // const users = userData.map((user) => user.get({ plain: true }));
+    const users = userData.map((user) => user.get({ plain: true }));
 
     res.render('homepage', {
-      
+      users,
  
       logged_in: req.session.logged_in,
     });
@@ -24,25 +23,23 @@ router.get('/', async (req, res) => {
   }
 });
 
-router.get('/addchild',async(req, res) => {
+router.get('/add_child',async(req, res) => {
  try {
    const userData= await User.findByPk(req.session.user_id, {
     attributes: { exclude: ['password'] }, 
     include: [{model: Child, 
     include: [{model: Chores,
-      // attributes: {
-      //   include: [
-      //     [
-
-      //       // Use plain SQL to add up the total earnings
-      //       sequelize.literal(
-      //         '(SELECT SUM(rate) FROM chores WHERE status_complete = true)'
-
-      //       ),
-      //       'totalEarnings',
-      //     ],
-      //   ],
-      // },
+      attributes: {
+        include: [
+          [
+            // Use plain SQL to add up the total earnings
+            sequelize.literal(
+              '(SELECT SUM(rate) FROM chores WHERE status = true)'
+            ),
+            'totalEarnings',
+          ],
+        ],
+      },
     }]
     }]
     

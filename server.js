@@ -3,8 +3,7 @@ const express = require('express');
 
 const session = require('express-session');
 
-//const routes = require('./controllers');
-//console.log('routes',routes)
+
 const exphbs = require('express-handlebars');
 
 const app = express();
@@ -42,10 +41,6 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')))
 app.use(require('./controllers'));
 sequelize.sync({ force: false }).then(() => {
-  
-  // User.findAll({}).then(x => console.log(x))
-  // Chores.findAll({}).then(x => console.log(x))
-  //
   app.listen(PORT, () => console.log('Server listening on: http://localhost:' + PORT));
 });
 
