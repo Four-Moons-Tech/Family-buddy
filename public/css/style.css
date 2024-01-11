@@ -1,7 +1,6 @@
 :root {
-  --primary: #3d5852;
-  --secondary: #86938f;
-  --tertiary: #5e877f;
+  --primary: #70d1e4;
+  --tertiary: #ea49ed;
   --quatrinary: #6c6b67;
   --light: #e3e4e3;
   --dark: #182c23;
@@ -16,17 +15,18 @@ body {
   flex-direction: column;
   min-height: 100vh;
   justify-content: flex-start;
-  background-color: var(--quatrinary);
+  background-image: url('./images/Background.jpeg');
+  background-size: cover;
 }
 
 a {
-  color: var(--dark);
+  
   text-decoration: none;
 }
 
 
 header {
-  padding: 40px;
+  padding: 15px;
   text-align: center;
   background: var(--primary);
   color: var(--light);
@@ -38,13 +38,13 @@ main {
   flex-grow: 1;
 }
 
-aside {
+/* aside {
   flex: 0;
   background-color: var(--tertiary);
   padding: 80px;
   text-align: left;
   color: var(--light);
-}
+} */
 
 nav {
   display: flex;
@@ -58,25 +58,34 @@ nav a {
   text-align: center;
 }
 
-nav a:hover {
-  color: var(--secondary);
-  background-color: var(--dark);
+h5 {
+  text-transform: uppercase;
+  font-size: 48px;
+  text-decoration: underline;
 }
 
 .child {
   flex: 4;
   background-color: #fff;
-  padding: 50px;
+  padding: 25px;
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
   align-items: center;
 }
 
-.btn-no-style {
-  background: none;
-  border: none;
-  padding: 0;
+.btn.btn-primary {
+  background-color: #2d3e50;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 100%;
+  transition: color 0.1s;
+  margin-left: 16px;
+}
+
+#login {
+  background-color: #2d3e50;
+  color: #d9e9e8;
   cursor: pointer;
   text-decoration: none;
   font-size: 100%;
@@ -101,7 +110,7 @@ img {
 .card {
   margin: 20px;
   flex: 0 1 300px;
-  border: 7px double var(--dark);
+  border: 7px double goldenrod;
   border-radius: 10px;
   background-color: var(--light);
   color: var(--dark);
@@ -112,15 +121,15 @@ img {
   flex: 0 0 50%;
   max-width: 50%;
   padding: 5px;
-  border: 3px solid var(--dark);
+  border: 3px solid goldenrod;
   border-radius: var(--border-radius);
   border-style: double;
   border-width: thick;
-  background-color: #577a7c;
+  background-color:deepskyblue;
   color: var(--light);
 }
 
-.card header {
+.card h1 {
   color: var(--light);
   font-weight: bold;
   text-transform: uppercase;
@@ -128,6 +137,11 @@ img {
   background-color: var(--tertiary);
   padding: 0.625rem;
   border-radius: calc(0.18rem - 1px) calc(0.18rem - 1px) 0 0;
+}
+
+.card h4 {
+  text-transform: uppercase;
+  font-size: 32px;
 }
 
 .card-body {
@@ -154,6 +168,9 @@ img {
   align-content:center;
   align-items: center;
 }
-.container-fluid {
+main.container-fluid {
   width:100%
+}
+section.container {
+  padding:0%;
 }

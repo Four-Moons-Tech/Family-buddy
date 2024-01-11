@@ -1,6 +1,6 @@
 {{#if logged_in}}
 <section class="container">
-    <h3 class="family-name">Welcome, {{user.last_name}} Family</h3>
+    <h5 class="family-name">Welcome, {{user.last_name}} Family</h5>
 
     <section class="flex-row justify-center">
         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal" id="open-modal"
@@ -43,7 +43,8 @@
         <div class='row'>
             {{#each user.children as |child|}}
             <div class="child card  p-5 m-5">
-                <h2 class="title is-size-1 is-size-3-mobile">{{child.name}} {{child.age}} years old</h2>
+                <h4 class="title is-size-1 is-size-3-mobile">{{child.name}}</h4>
+                <h2 class="title is-size-1 is-size-3-mobile">{{child.age}} years old</h2>
                 <h2 class="title is-size-1 is-size-3-mobile"> is saving for </h2>
                 <h1 class="title is-size-1 is-size-3-mobile"> {{child.description}}</h1>
                 <h3 class="title is-size-1 is-size-3-mobile">Goal: ${{child.goal}}</h3>

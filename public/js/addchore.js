@@ -7,7 +7,7 @@ function saveModalChore (event){
   
 
   //console.log('name', name, 'rate', rate)
-   fetch('/api/chore', {
+   fetch('/child/child_id/chore', {
       method: 'POST',
       body: JSON.stringify({ name, rate }),
       headers: { 'Content-Type': 'application/json' }

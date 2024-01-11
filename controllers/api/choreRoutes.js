@@ -2,8 +2,8 @@ const router = require('express').Router();
 const { Chores } = require('../../models');
 const withAuth = require('../../utils/auth')
 
-router.post('/chore', async (req, res) => {
-  
+router.post('/child/:id/chore', async (req, res) => {
+     console.log('test', req)
     try {
       console.log({...req.body})
       const newChore = await Chores.create({
