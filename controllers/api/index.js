@@ -5,7 +5,7 @@ const choreRoutes = require('./choreRoutes');
 
 router.use('/users', userRoutes);
 router.use('/child', childRoutes);
-router.use('/chores', choreRoutes);
+router.use('/chore', choreRoutes);
 
 
 module.exports = router;

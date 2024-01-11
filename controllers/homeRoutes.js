@@ -32,7 +32,7 @@ router.get('/add_child',async(req, res) => {
       attributes: {
         include: [
           [
-            // Use plain SQL to add up the total mileage
+            // Use plain SQL to add up the total earnings
             sequelize.literal(
               '(SELECT SUM(rate) FROM chores WHERE status = true)'
             ),
