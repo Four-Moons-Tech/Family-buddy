@@ -92,6 +92,15 @@ h5 {
   transition: color 0.1s;
   margin-left: 16px;
 }
+#logout {
+  background-color: #2d3e50;
+  color: #d9e9e8;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 100%;
+  transition: color 0.1s;
+  margin-left: 16px;
+}
 
 img {
   max-width: 100%;
