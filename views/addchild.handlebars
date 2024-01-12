@@ -50,15 +50,8 @@
                 <h3 class="title is-size-1 is-size-3-mobile">Goal: ${{child.goal}}</h3>
                 <h3>Eanings: ${{totalEarnings}}</h3>
                 {{#each child.chores as |chore|}}
-                <div class="form-check">
-                    <input 
-                        class="form-check-input" 
-                        type="checkbox" 
-                        data-childid="{{child.id}}"
-                        id="flexCheckDefault" 
-                        checked=""
-                        onchange="updateChore(this, {{chore.id}})"
-                    >
+                 <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                     <label class="form-check-label" for="flexCheckDefault">
                         {{chore.name}} {{chore.rate}}
                     </label>
