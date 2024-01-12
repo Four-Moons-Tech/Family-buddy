@@ -6,9 +6,9 @@
 
 * _What motivated us to do this project? We wanted a well designed tool to use with our family.
 
-* _Why did I build this application?_ As a parent of 2 children, I know how challenging it can be to mitivate kids to do chores. This application helps children set a goal like a new toy and visually see where he or she is in the process of reaching theat goal. Visual presentation makes it exciting and helps a child understand that reaching a goal is not impossible. 
+* _Why did I build this application?_ We wanted an application to motivate kids to do chores. This application helps children set a goal like a new toy and visually see where he or she is in the process of reaching theat goal. Visual presentation makes it exciting and helps a child understand that reaching a goal is not impossible. 
 
-* _What did I learn?_  I learned how to build a SQL database, work with both front end and back end. 
+* _What did I learn?_  We learned how to build a SQL database, work with both front end and back end, use handlebars template. 
 
 * _What problem does my application solve?_ the application teaches kids how to set goals and works towards them. 
       
@@ -44,7 +44,8 @@ You can see our GitHub accounts here:
 >Jarett: jarettdesanti@gmail.com
 >Chukwuka: chukwukaizamojee@gmail.com
 
+> Heroku Deployment: https://family-buddy-b8560051fa5f.herokuapp.com/add_child
+>![Link to Video Walk Through](public/css/images/Family-buddy.mov)
 
->[Link to Video Walk Through]()
-
-> ![Application Screenshot](<>)  
+>![Screenshot1](public/css/images/Family-buddy1.png)
+>![Screenshot2](public/css/images/Family-buddy2.png) 
