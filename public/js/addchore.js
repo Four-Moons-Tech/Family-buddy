@@ -30,25 +30,24 @@ function saveModalChore (name, rate, child_id){
     }
    }).catch((err) =>{
     console.log(err)
-    // console.log(response)
    }
    )
 }
-
-function updateChore(input, choreId) {
-  const status = input.checked ? true : false
-  const child_id = input.dataset.childid
-  fetch(`/api/chore/${choreId}`, {
-    method: 'PUT',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({status, child_id})
-  })
-  .then((response)=>{
-    if (response.ok) {
-      document.location.replace('/add_child')
-    }
-  })
-  .catch(err => {
-    console.log(err)
-  })
-}
+// Commended out for future development
+// function updateChore(input, choreId) {
+//   const status = input.checked ? true : false
+//   const child_id = input.dataset.childid
+//   fetch(`/api/chore/${choreId}`, {
+//     method: 'PUT',
+//     headers: { 'Content-Type': 'application/json' },
+//     body: JSON.stringify({status, child_id})
+//   })
+//   .then((response)=>{
+//     if (response.ok) {
+//       document.location.replace('/add_child')
+//     }
+//   })
+//   .catch(err => {
+//     console.log(err)
+//   })
+// }

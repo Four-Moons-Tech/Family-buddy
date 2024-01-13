@@ -6,11 +6,11 @@
 
 * _What motivated us to do this project? We wanted a well designed tool to use with our family.
 
-* _Why did I build this application?_ We wanted an application to motivate kids to do chores. This application helps children set a goal like a new toy and visually see where he or she is in the process of reaching theat goal. Visual presentation makes it exciting and helps a child understand that reaching a goal is not impossible. 
+* _Why did I build this application?_ We wanted an application to motivate kids to do chores. This application helps children set a goal like a new toy and visually see where he or she is in the process of reaching the goal. Visual presentation makes it exciting and helps a child understand that reaching a goal is not impossible. 
 
 * _What did I learn?_  We learned how to build a SQL database, work with both front end and back end, use handlebars template. 
 
-* _What problem does my application solve?_ the application teaches kids how to set goals and works towards them. 
+* _What problem does my application solve?_ The application teaches kids how to set goals and works towards them. 
       
 
 ## Table of Contents
@@ -23,14 +23,15 @@
 1. [Questions](#tests)
 
 ## Installation
-Type http://family-buddy-b8560051fa5f.herokuapp.com/ in the brower to open the application. Click "Register" if you are a new user, or click " Login" if you are an existing user. 
+Type http://family-buddy-b8560051fa5f.herokuapp.com/ in the brower to open the application. Create a username if you are a new user, or log in if you are an existing user. 
 
 ## Usage
 Once logged in, click "Add a child" to create child record and a child's goal. Click "Add chore" to add a chore and the price.
 ## License
 None
 ## Contributing
-Placeholder 
+Our tutor Doug helped overcome the challenge of save button in add chore modal throwing error and saving a chore to a child. 
+- https://preply.com/en/tutor/3316660
 ## Tests
 You can test this application going to http://family-buddy-b8560051fa5f.herokuapp.com/ and creating a user account. 
 ## Questions

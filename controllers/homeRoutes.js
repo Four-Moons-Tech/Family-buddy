@@ -34,7 +34,7 @@ router.get('/add_child',async(req, res) => {
           [
             // Use plain SQL to add up the total earnings
             sequelize.literal(
-              '(SELECT SUM(rate) FROM chores WHERE status = false)'
+              '(SELECT SUM(rate) FROM chores WHERE status = true)'
             ),
             'totalEarnings',
           ],

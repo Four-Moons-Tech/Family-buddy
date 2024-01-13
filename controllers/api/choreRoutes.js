@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const { Chores } = require('../../models');
-// const withAuth = require('../../utils/auth')
+
 
 router.post('/', async (req, res) => {
   
@@ -17,30 +17,30 @@ router.post('/', async (req, res) => {
     }
   });
 
-
-  router.put('/:id', async (req, res) => {
-    try {
-      const choreData = await Chores.update({
-        status: req.body.status
-      },{
-        where: {
-          id: req.params.id,
-          child_id: req.body.child_id
-        },
-      }); 
+  //Commended out for future development
+  // router.put('/:id', async (req, res) => {
+  //   try {
+  //     const choreData = await Chores.update({
+  //       status: req.body.status
+  //     },{
+  //       where: {
+  //         id: req.params.id,
+  //         child_id: req.body.child_id
+  //       },
+  //     }); 
       
   
-      if (!choreData) {
-        res.status(404).json({ message: '???' });
-        return;
-      }
+  //     if (!choreData) {
+  //       res.status(404).json({ message: '???' });
+  //       return;
+  //     }
   
-      res.status(200).json(choreData);
-    } catch (err) {
-      console.log(err)
-      res.status(500).json(err);
-    }
-  });
+  //     res.status(200).json(choreData);
+  //   } catch (err) {
+  //     console.log(err)
+  //     res.status(500).json(err);
+  //   }
+  // });
   
 
   module.exports = router;
